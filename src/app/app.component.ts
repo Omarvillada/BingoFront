@@ -14,7 +14,9 @@ export class AppComponent {
   }
   balota: string = "";
   intentos: string = "";
-
+  tablero: any = {"b":["14","15","12"],"i":["30","28","30"],"g":["68","64","64"],"n":["46","49","48"],"o":["76","80","87"]};
+  letras = Object.keys(this.tablero);
+  numeros = Object.values(this.tablero);
    getBalota():void {
   /**
    * 1. Llamar el servicio
@@ -23,6 +25,7 @@ export class AppComponent {
     .subscribe((response: any) =>{ 
 
       this.balota = response.balota;
+      this.findNumber(this.balota);
     });
 
 
@@ -31,10 +34,21 @@ export class AppComponent {
 
 
     console.log('Hola Mundo');
+  
   }
 
   buscarBalot(balota : any){
       
+  }
+
+  findNumber(number: string){
+    var celda = document.getElementById(number);
+    if(celda != null){
+      celda.style.backgroundColor = 'yellow'; 
+      console.log(celda)
+      console.log(number)
+    }
+   
   }
 }
 

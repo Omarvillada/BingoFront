@@ -2,3 +2,80 @@
 
 
 <button (click)="getBalota()">Ejecutar</button>
+
+<div *ngFor="let item of tablero | keyvalue">
+    Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
+</div>
+
+<table id="bingo">
+    <tr>
+        <td>
+            B
+        </td>
+        <td>
+            I
+        </td>
+        <td>
+            N
+        </td>
+        <td>
+            G
+        </td>
+        <td>
+            O
+        </td>
+    </tr>
+    <tr>
+        <td id= '{{"B-"+tablero["b"][0]}}'>
+           {{tablero['b'][0]}}
+        </td>
+        <td>
+            {{tablero['i'][0]}}
+        </td>
+        <td>
+            3
+        </td>
+        <td>
+            4
+        </td>
+        <td>
+            5
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            {{tablero['b'][1]}}
+        </td>
+        <td>
+            {{tablero['i'][1]}}
+        </td>
+        <td>
+            3
+        </td>
+        <td>
+            4
+        </td>
+        <td>
+            5
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            {{tablero['b'][2]}}
+        </td>
+        <td>
+            {{tablero['i'][2]}}
+        </td>
+        <td>
+            3
+        </td>
+        <td>
+            4
+        </td>
+        <td>
+            5
+        </td>
+    </tr>
+</table>
